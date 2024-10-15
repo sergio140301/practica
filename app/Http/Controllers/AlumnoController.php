@@ -13,12 +13,12 @@ class AlumnoController extends Controller
   public function __construct()
   {
       $this->validado = [
-          'noctrl' => 'required|string|max:255|unique:alumnos,noctrl',
-          'nombre' => 'required|string|max:255',
-          'apellidop' => 'required|string|max:255',
-          'apellidom' => 'required|string|max:255',
+          'noctrl' => 'required|string|max:8',
+          'nombre' => 'required|string|max:50',
+          'apellidop' => 'required|string|max:50',
+          'apellidom' => 'required|string|max:50',
           'sexo' => 'required|in:M,F',
-          'email' => 'required|email|unique:alumnos,email',
+          'email' => 'required|email',
           'carrera_id' => 'required|exists:carreras,id',
       ];
   }
@@ -32,7 +32,7 @@ class AlumnoController extends Controller
 
   public function create()
   {
-      $carreras = \App\Models\Carrera::all(); // Obtener todas las carreras
+      $carreras = \App\Models\Carrera::all(); 
       $alumnos = Alumno::Paginate(5);
       $alumno = new Alumno;
       $desabilitado = "";
@@ -58,8 +58,8 @@ class AlumnoController extends Controller
   {
       $alumnos = Alumno::paginate(5);
       $carreras = \App\Models\Carrera::all(); // Obtener todas las carreras
-      $accion = "actualizar";
-      $txtbtn = "Eliminar Datos";
+      $accion = "ver";
+      $txtbtn = "ver";
       $desabilitado = "disabled";
   
       return view('catalogos.alumnos2.frm', compact('alumnos', 'alumno', 'carreras', 'accion', 'txtbtn', 'desabilitado'));
@@ -82,13 +82,12 @@ class AlumnoController extends Controller
 
   public function update(Request $request, Alumno $alumno)
   {
-      // Validar datos
+
       $validado = $request->validate($this->validado);
-      
-      // Actualizar el alumno
+
       $alumno->update($validado);
       
-      // Redirigir con éxito y pasar la variable de carreras si necesitas
+
       return redirect()->route('alumnos.index')->with('success', 'Alumno actualizado exitosamente.');
   }
 

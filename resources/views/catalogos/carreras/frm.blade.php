@@ -1,7 +1,7 @@
 @extends('inicio2')
 
 @section('contenido1')
-    @include('carreras.tablahtml')  {{-- Asegúrate de que la ruta sea correcta --}}
+    @include('carreras.tablahtml')
 @endsection
 
 @section('contenido2')

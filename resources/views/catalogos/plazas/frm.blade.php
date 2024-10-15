@@ -35,19 +35,19 @@
 
                         <div class="mb-3">
                             <label for="idplaza" class="form-label">ID Plaza</label>
-                            <input type="text" name="idplaza" class="form-control" id="idplaza"
+                            <input type="text" name="idplaza" class="form-control" id="idplaza" maxlength="7"
                                 value="{{ old('idplaza', $plaza->idplaza ?? '') }}" {{ $accion == 'mostrar' ? 'disabled' : '' }}>
                             @error('idplaza')
                                 <ul class="list-unstyled text-danger">
                                     <p>error en el ID Plaza {{ $message }}</p>
                                 </ul>
                             @enderror
-                            <div class="form-text">Escribe el ID de la Plaza</div>
+                            <div class="form-text">Escribe el ID de la Plaza con 3 letras y 4 numeros</div>
                         </div>
 
                         <div class="mb-3">
                             <label for="nombreplaza" class="form-label">Nombre de la Plaza</label>
-                            <input type="text" name="nombreplaza" class="form-control" id="nombreplaza"
+                            <input type="text" name="nombreplaza" class="form-control" id="nombreplaza" maxlength="150"
                                 value="{{ old('nombreplaza', $plaza->nombreplaza ?? '') }}" {{ $accion == 'mostrar' ? 'disabled' : '' }}>
                             @error('nombreplaza')
                                 <ul class="list-unstyled text-danger">

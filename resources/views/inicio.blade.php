@@ -9,7 +9,7 @@
     @vite(['resources/js/app.js'])
 
     <title>PRACTICA</title>
-  
+
     <style>
         body {
             background-color: #000000;
@@ -47,55 +47,39 @@
             background-color: #333;
             color: white;
             text-align: center;
-            padding: 10px 0; 
+            padding: 10px 0;
         }
     </style>
 </head>
+
 <body>
 
-    @include('menu')
+        @include('menu')
 
-    <div>
-        @if (Auth::check())
-            <section class="hero-section">
-                <div class="text-center">
-                    <h2 class="hero-title">BIENVENIDOS <br>A la práctica</h2>
-                    <p class="hero-text">
-                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Est consectetur quas veniam
-                        accusantium iure tempore ratione voluptas, voluptate repudiandae numquam reprehenderit eum
-                        rerum architecto repellat dolores ab saepe officia facilis! <strong>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem iusto iure aut
-                        molestiae exercitationem, fugit maxime, ducimus possimus minima harum animi recusandae
-                        deleniti sit velit reprehenderit nisi a et magnam!</strong>
+        <section class="hero-section" style="background-color: #000000;">
+            <div class="text-center">
+                <h1 class="hero-title">PRACTICA DE MENUS Y SUBMENUS</h1>
+                <h2 class="hero-subtitle">BIENVENIDO INVITADO <br> INICIA SESION O REGISTRATE</h2>
+            </div>
+        </section>
+        <div class="container my-4">
+            <div class="card text-center">
+                <div class="card-body">
+                    <h5 class="card-title">Información Importante</h5>
+                    <p class="card-text">
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt nihil hic ipsum, <br>
+                        iusto culpa voluptatem laborum vitae iure numquam animi velit rem quam nesciunt officiis <br>
+                        magni! Vel quia veritatis dicta?
+                    </p>
+                    <p class="card-text">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore, officia! Obcaecati, <br>
+                        fugit rem molestiae earum maxime eveniet. Consequatur maiores consectetur dolor nostrum. <br>
+                        Ullam aut ut incidunt tempora veritatis dolor quaerat.
                     </p>
                 </div>
-            </section>
-        @else
-            <section class="hero-section" style="background-color: #000000;">
-                <div class="text-center">
-                    <h1 class="hero-title">PRACTICA DE MENUS Y SUBMENUS</h1>
-                    <h2 class="hero-subtitle">BIENVENIDO INVITADO <br> INICIA SESION O REGISTRATE</h2>
-                </div>
-            </section>
-        @endif
-    </div>
-
-    <div class="container my-4">
-        <div class="card text-center">
-            <div class="card-body">
-                <h5 class="card-title">Información Importante</h5>
-                <p class="card-text">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt nihil hic ipsum, <br>
-                    iusto culpa voluptatem laborum vitae iure numquam animi velit rem quam nesciunt officiis <br>
-                    magni! Vel quia veritatis dicta?
-                </p>
-                <p class="card-text">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore, officia! Obcaecati, <br>
-                    fugit rem molestiae earum maxime eveniet. Consequatur maiores consectetur dolor nostrum. <br>
-                    Ullam aut ut incidunt tempora veritatis dolor quaerat.
-                </p>
             </div>
         </div>
-    </div>
+
 
     @yield('contenido1')
 
@@ -106,4 +90,5 @@
     </footer>
 
 </body>
+
 </html>

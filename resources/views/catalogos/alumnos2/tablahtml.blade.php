@@ -59,6 +59,6 @@
                 @endforeach
             </tbody>
         </table>
-        {{ $alumnos->links() }} <!-- Paginación -->
+        {{ $alumnos->links() }}
     </div>
 </div>

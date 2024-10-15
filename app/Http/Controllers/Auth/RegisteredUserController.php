@@ -22,6 +22,10 @@ class RegisteredUserController extends Controller
         return view('auth.register');
     }
 
+    protected function redirectTo()
+{
+    return '/inicio2'; 
+}
     /**
      * Handle an incoming registration request.
      *

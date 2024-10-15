@@ -150,13 +150,26 @@ Route::get('/catalogos.submenu', function () {
 
 
 
+ //ruta principal de bienvenida.
 
 Route::get('/', function () {
-    return view('inicio2');
-})->name("inicio2");
+    return view('inicio');
+})->name("inicio");
 
-Route::get('/inicio2', function () {
-    return view('inicio2');
+
+
+Route::middleware(['auth'])->group(function () {
+    Route::get('/inicio2', function () {
+        return view('inicio2'); // Vista para usuarios identificados
+    })->name('inicio2');
+});
+
+Route::get('/catalogos/otraVista', function () {
+    return view('catalogos.otraVista'); // Vista de bienvenida
+})->name('catalogos.bienvenida')->middleware('auth'); // Solo accesible para usuarios autenticados
+
+Route::get('/inicio', function () {
+    return view('inicio');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::middleware('auth')->group(function () {

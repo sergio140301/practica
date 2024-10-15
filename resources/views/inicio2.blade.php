@@ -37,14 +37,7 @@
             </div>
         </div>
 
-        <div class="container">
-            <div class="row">
-                <div class="col">
-                    <h1>BIENVENIDO AL SISTEMA, <br>
-                        INCIASTE SESION CORRECTAMENTE</br></h1>
-                </div>
-            </div>
- 
+      
             <div class="row">
                 <div class="col">
                     @yield('contenido4000')
@@ -52,13 +45,13 @@
             </div> 
 
             <div class="row">
-                <div class="col-md-6"> <!-- Columna para contenido2 -->
+                <div class="col-md-6"> 
                     @yield('contenido2')
                 </div>
-                {{-- <div class="col-md-6"> <!-- Columna para contenido3000 -->
-                    @yield('contenido3000')
+                 <div class="col-md-12"> 
+                    @yield('bienvenida')
                 </div>
-            </div> --}}
+            </div> 
 
             <div class="row">
                 <div class="col">

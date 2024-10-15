@@ -14,12 +14,15 @@
                             Insertando datos nuevos
                         @elseif ($accion == 'actualizar')
                             Actualizando datos
+                            @elseif ($accion == 'ver')
+                            Ver datos
                         @endif
                     </h4>
                 </div>
 
                 <div class="card-body">
                     <form method="POST" 
+                
                     action="@if ($accion == 'crear') 
                                 {{ route('alumnos.store') }} 
                             @else 
