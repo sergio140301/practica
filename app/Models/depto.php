@@ -2,8 +2,9 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
+use App\Models\carrera;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class depto extends Model
 {
@@ -12,7 +13,7 @@ class depto extends Model
     
     public function carreras()
     {
-        return $this->hasMany(Carrera::class);
+        return $this->hasMany(carrera::class);
     }
     
 
